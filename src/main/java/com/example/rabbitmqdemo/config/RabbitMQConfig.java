@@ -42,7 +42,7 @@ public class RabbitMQConfig {
      */
     public static final String TOPIC_EXCHANGE_DEMO_NAME = "topic.exchange.demo.name";
 
-    public static final String TOPIC_ORG_EXCHANGE = "org.exchange";
+    public static final String TOPIC_ORG_EXCHANGE = "orgExchange";
 
     /**
      * RabbitMQ的TOPIC_EXCHANGE交换机的队列A的名称

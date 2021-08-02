@@ -1,7 +1,6 @@
 package com.example.rabbitmqdemo.rabbitmq.consumer;
 
 
-import com.alibaba.fastjson.JSONObject;
 import com.example.rabbitmqdemo.config.RabbitMQConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.Queue;
@@ -15,7 +14,6 @@ import org.springframework.stereotype.Component;
  * @Description:
  */
 @Component
-@RabbitListener(queuesToDeclare = @Queue(RabbitMQConfig.TOPIC_ORGQUEUE))
 @Slf4j
 public class TopicExchangeConsumerOrg {
 
@@ -24,9 +22,10 @@ public class TopicExchangeConsumerOrg {
 //        System.out.println("message:" + message.toString());
 //    }
 
+    @RabbitListener(queuesToDeclare = @Queue(RabbitMQConfig.TOPIC_ORGQUEUE))
     @RabbitHandler
-    public void process(JSONObject message) {
-        System.out.println("message:" + JSONObject.toJSONString(message));
+    public void process(String message) {
+        System.out.println("message:" + message);
     }
 
 }
