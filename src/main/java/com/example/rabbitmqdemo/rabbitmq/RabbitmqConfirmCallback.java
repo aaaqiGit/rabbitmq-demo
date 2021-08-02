@@ -1,15 +1,16 @@
 package com.example.rabbitmqdemo.rabbitmq;
 
+import com.alibaba.fastjson.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.amqp.core.Message;
+import org.springframework.amqp.core.ReturnedMessage;
 import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Component;
 
 import java.io.ByteArrayInputStream;
 import java.io.ObjectInputStream;
-import java.util.Map;
+import java.util.Objects;
 
 /**
  * @author
@@ -17,7 +18,7 @@ import java.util.Map;
  * @date 2020-07-28 23:56
  **/
 @Component
-public class RabbitmqConfirmCallback implements RabbitTemplate.ConfirmCallback, RabbitTemplate.ReturnCallback {
+public class RabbitmqConfirmCallback implements RabbitTemplate.ConfirmCallback, RabbitTemplate.ReturnsCallback {
     private Logger logger = LoggerFactory.getLogger(RabbitmqConfirmCallback.class);
 
     /**
@@ -37,14 +38,13 @@ public class RabbitmqConfirmCallback implements RabbitTemplate.ConfirmCallback, 
     }
 
     @Override
-    public void returnedMessage(Message message, int replyCode, String replyText, String exchange, String routingKey) {
-        logger.info("消息没有路由到队列，获得返回的消息");
-        Map map = byteToObject(message.getBody(), Map.class);
-        logger.info("message body: {}", map == null ? "" : map.toString());
-        logger.info("replyCode: {}", replyCode);
-        logger.info("replyText: {}", replyText);
-        logger.info("exchange: {}", exchange);
-        logger.info("routingKey: {}", exchange);
+    public void returnedMessage(ReturnedMessage returned) {
+        logger.info("确认消息送到队列(Queue)结果：");
+        logger.info("message body: {}", Objects.isNull(returned) ? "" : JSONObject.toJSONString(returned));
+        logger.info("replyCode: {}", returned.getReplyCode());
+        logger.info("replyText: {}", returned.getReplyText());
+        logger.info("exchange: {}", returned.getExchange());
+        logger.info("routingKey: {}", returned.getRoutingKey());
         logger.info("------------> end <------------");
     }
 

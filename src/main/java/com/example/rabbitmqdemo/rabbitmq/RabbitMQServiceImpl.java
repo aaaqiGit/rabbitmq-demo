@@ -42,7 +42,7 @@ public class RabbitMQServiceImpl implements RabbitMQService {
         //指定 ConfirmCallback
         rabbitTemplate.setConfirmCallback(rabbitmqConfirmCallback);
         //指定 ReturnCallback
-        rabbitTemplate.setReturnCallback(rabbitmqConfirmCallback);
+        rabbitTemplate.setReturnsCallback(rabbitmqConfirmCallback);
     }
 
     @Override
