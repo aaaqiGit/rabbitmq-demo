@@ -12,11 +12,6 @@ import java.io.ByteArrayInputStream;
 import java.io.ObjectInputStream;
 import java.util.Objects;
 
-/**
- * @author
- * @name RabbitmqConfirmCallback
- * @date 2020-07-28 23:56
- **/
 @Component
 public class RabbitmqConfirmCallback implements RabbitTemplate.ConfirmCallback, RabbitTemplate.ReturnsCallback {
     private Logger logger = LoggerFactory.getLogger(RabbitmqConfirmCallback.class);

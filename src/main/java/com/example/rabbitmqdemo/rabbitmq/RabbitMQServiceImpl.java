@@ -18,11 +18,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-/**
- * @author
- * @name RabbitMQServiceImpl
- * @date 2020-07-21 23:32
- **/
 @Service
 public class RabbitMQServiceImpl implements RabbitMQService {
 

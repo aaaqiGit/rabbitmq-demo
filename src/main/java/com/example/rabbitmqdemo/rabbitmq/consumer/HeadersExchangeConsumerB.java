@@ -9,11 +9,6 @@ import org.springframework.amqp.rabbit.annotation.Queue;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
-/**
- *
- * @name HeadersExchangeConsumerA
- * @date 2020-07-24 23:03
- **/
 @Component
 public class HeadersExchangeConsumerB {
 

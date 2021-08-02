@@ -14,11 +14,7 @@ import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * @author
- * @name DirectRabbitConfig
- * @date 2020-07-21 23:20
- **/
+
 @Component
 @Configuration
 public class DirectRabbitConfig implements BeanPostProcessor {

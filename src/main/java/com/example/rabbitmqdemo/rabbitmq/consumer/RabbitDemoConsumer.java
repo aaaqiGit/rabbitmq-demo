@@ -8,11 +8,6 @@ import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
-/**
- *
- * @name RabbitDemoConsumer
- * @date 2020-07-21 23:42
- **/
 @Component
 public class RabbitDemoConsumer {
 

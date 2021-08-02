@@ -1,10 +1,5 @@
 package com.example.rabbitmqdemo.config;
 
-/**
- * @author
- * @name RabbitMQConfig
- * @date 2020-07-21 23:13
- **/
 public class RabbitMQConfig {
 
     /**

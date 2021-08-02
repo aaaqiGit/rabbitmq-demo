@@ -10,11 +10,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.Map;
 
-/**
- *
- * @name TopicExchangeConsumerA
- * @date 2020-07-24 00:58
- **/
 @Component
 @RabbitListener(queuesToDeclare = @Queue(RabbitMQConfig.TOPIC_EXCHANGE_QUEUE_A))
 public class TopicExchangeConsumerA {

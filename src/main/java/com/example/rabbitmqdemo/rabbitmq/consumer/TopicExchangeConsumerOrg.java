@@ -15,7 +15,10 @@ import java.io.IOException;
 /**
  * @author: aqi
  * @Date: 2021/7/29 13:15
- * @Description: 消息确认机制 ACK https://blog.csdn.net/pan_junbiao/article/details/112956537
+ * @Description: 消息确认机制
+ *
+ * 可参考：
+ * ACK https://blog.csdn.net/pan_junbiao/article/details/112956537
  * https://www.cnblogs.com/Javame/p/12131550.html
  */
 @Component

@@ -10,11 +10,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.Map;
 
-/**
- *
- * @name FanoutExchangeConsumerB
- * @date 2020-07-23 23:47
- **/
 @Component
 @RabbitListener(queuesToDeclare = @Queue(RabbitMQConfig.FANOUT_EXCHANGE_QUEUE_TOPIC_B))
 public class FanoutExchangeConsumerB {
