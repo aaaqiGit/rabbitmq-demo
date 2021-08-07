@@ -222,6 +222,6 @@ public class DirectRabbitConfig implements BeanPostProcessor {
 
         rabbitAdmin.declareExchange(rabbitmqDemoTopicOrgExchange());
         rabbitAdmin.declareQueue(orgQueue());
-        return null;
+        return bean;
     }
 }
